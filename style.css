@@ -27,23 +27,24 @@ header {
     align-items: center;
 }
 header >img {
-    width: 470px;
+    width: 400px;
 }
 div#info {
     background-color: var(--cor-de-caixa);
-    width: 470px;
+    width: 400px;
     text-align: center;
     margin: 10px 0px;
+    padding-bottom: 20px;
 }
 div#info > h1 {
-    padding: 10px 0px 5px 10px;
+    padding: 25px 0px 5px 10px;
 }
 div#info > p {
     padding: 10px 50px 5px 50px;
 }
 div.container {
-    max-width: 470px;
-    min-width: 350px;   
+    max-width: 400px;
+    min-width: 300px;   
 }
 
 div.carrossel {
@@ -58,8 +59,8 @@ div.carrossel {
 }
 article.card {
     background-color: var(--cor-de-caixa);
-    min-height: 350px;
-    min-width: 400px;
+    min-height: 330px;
+    min-width: 350px;
     scroll-snap-align: center;
     border-radius: 10px;
     display: flex;
