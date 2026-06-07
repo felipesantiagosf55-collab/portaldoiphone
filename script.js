@@ -1,34 +1,34 @@
-// Função para criar o efeito de retorno ao início
-  /*function ativarLoopCarrossel(seletor) {
-    const carrossel = document.querySelector(seletor);
-    
-    if (!carrossel) return;
+document.addEventListener("DOMContentLoaded", function () {
+    // Número do seu WhatsApp (apenas números com DDD)
+    const numeroWhatsapp = "5543999301558";
 
-    carrossel.addEventListener('scroll', () => {
-      // scrollLeft: o quanto o usuário já rolou para a direita
-      // scrollWidth: o tamanho total horizontal do carrossel interno
-      // clientWidth: a largura visível do carrossel na tela
-      const chegouAoFim = carrossel.scrollLeft + carrossel.clientWidth >= carrossel.scrollWidth - 5;
+    // Seleciona todos os botões de compra da página
+    const botoesComprar = document.querySelectorAll(".btn-comprar");
 
-      if (chegouAoFim) {
-        // Remove temporariamente o scroll-snap para não travar a animação de volta
-        carrossel.style.scrollSnapType = 'none';
-        
-        // Joga a rolagem de volta para o começo de forma suave
-        carrossel.scrollTo({
-          left: 0,
-          behavior: 'smooth'
+    botoesComprar.forEach(botao => {
+        botao.addEventListener("click", function (event) {
+            // Evita o comportamento padrão caso seja um link <a>
+            event.preventDefault();
+
+            // Encontra o cartão (card) onde o botão foi clicado
+            const card = botao.closest(".card");
+
+            // Pega as informações de texto de dentro desse cartão específico
+            const modelo = card.querySelector("h1").innerText;
+            const semiNovo = card.querySelector("p:nth-of-type(1)").innerText; // Pega o primeiro paragrafo (se é novo ou seminovo)
+            const detalhes = card.querySelector("p:nth-of-type(2)").innerText; // Pega o segundo parágrafo (Cor e GB)
+
+            // Cria a mensagem personalizada
+            const mensagem = `Olá! Gostaria de mais informações sobre o ${modelo} ${semiNovo} (${detalhes}).`;
+
+            // Codifica a mensagem para o formato de URL do WhatsApp
+            const mensagemCodificada = encodeURIComponent(mensagem);
+
+            // Monta o link final da API do WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsapp}?text=${mensagemCodificada}`;
+
+            // Abre o WhatsApp em uma nova aba do navegador
+            window.open(linkWhatsApp, "_blank");
         });
-
-        // Reativa o scroll-snap após a animação de retorno acabar (400ms)
-        setTimeout(() => {
-          carrossel.style.scrollSnapType = 'x mandatory';
-        }, 400);
-      }
     });
-  }
-
-  // Ativa o monitoramento nos seus dois carrosséis
-  ativarLoopCarrossel('div.carrossel');
-  ativarLoopCarrossel('div.carrosselC');*/
-  
+});

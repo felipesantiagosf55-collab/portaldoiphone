@@ -101,7 +101,7 @@ section > h1 {
     margin: -10px 0px 0px 10px;
 }
 article.card > p {
-    padding: 10px;
+    padding: 10px 0px 0px 0px ;
 }
 article.cardC > p {
     padding: 15px 0px 5px 18px;
@@ -124,10 +124,37 @@ article.card > button {
     border-radius: 30px;
     margin: 10px 0px 20px 0px;
 }
-article.card > img {
-    width: 150px;
+article.card > button:hover {
+    transform: scale(1.05);
 }
+article.card > img {
+    width: 75px;
+}
+footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
+section#tel {
+    background-color: rgba(212, 212, 212, 0.734);
+    text-align: center;
+    width: 200px;
+    padding: 8px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.452);
+}
+section#redes {
+    margin: 10px 0px 50px 0px;
+}
+section#redes > P > a {
+    margin: 8px;
+    padding: 5px;
+    text-decoration: none;
+    color: var(--cor-button);
+    font-size: 1.8em;
+}
 @keyframes rolarIphones {
     0% {
         transform: translateX(0);
