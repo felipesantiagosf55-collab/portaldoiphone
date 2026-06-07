@@ -236,18 +236,3 @@ section#redes > P > a {
         margin: 15px;
     }
 }
-
-/* ==========================================
-   DISPOSITIVOS ULTRA GRANDES (Large Screens - a partir de 1440px)
-   ========================================== */
-@media screen and (min-width: 1440px) {
-    main {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-        gap: 20px;
-    }
-}
