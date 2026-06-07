@@ -6,7 +6,7 @@
   border: 0px; 
 }
 :root {
-    --cor-fundo: rgba(128, 128, 128, 0.295);
+    --cor-fundo: rgba(194, 194, 194, 0.295);
     --cor-de-caixa: white;
     --cor-button: rgba(0, 81, 255, 0.878);
     
@@ -43,15 +43,28 @@ div#info > p {
     padding: 10px 50px 5px 50px;
 }
 div.container {
-    max-width: 400px;
+    max-width: 380px;
     min-width: 300px;   
 }
-
+div.containerC {
+    max-width: 380px;
+    min-width: 300px;
+}
 div.carrossel {
     display: grid;
     grid-auto-flow: column;
     gap: 1.2rem;
-    margin: 10px 0px 40px 0px;
+    margin: 10px 0px 20px 0px;
+    overflow-x: auto; /*faz com que crie uma barra de rolagem dentro do pai*/
+    overscroll-behavior-x: contain; /*Limita a barra de rolagem*/
+    scroll-snap-type: x mandatory; /*Junto com o *scroll-snap-align: center;* , faz com que eu sempre pare no meio de cada filho*/
+    scrollbar-width: none; /*Tira a barra de rolagem*/
+}
+div.carrosselC {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 1.2rem;
+    margin: 10px 0px 20px 0px;
     overflow-x: auto; /*faz com que crie uma barra de rolagem dentro do pai*/
     overscroll-behavior-x: contain; /*Limita a barra de rolagem*/
     scroll-snap-type: x mandatory; /*Junto com o *scroll-snap-align: center;* , faz com que eu sempre pare no meio de cada filho*/
@@ -60,9 +73,21 @@ div.carrossel {
 article.card {
     background-color: var(--cor-de-caixa);
     min-height: 330px;
-    min-width: 350px;
+    min-width: 310px;
     scroll-snap-align: center;
-    border-radius: 10px;
+    border-radius: 25px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+article.cardC {
+    background-color: var(--cor-de-caixa);
+    min-height: 200px;
+    min-width: 310px;
+    scroll-snap-align: center;
+    border-radius: 25px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -73,8 +98,8 @@ article.card > p {
 article.card > p.cor {
     color: brown;
 }
-article.card > h1 {
-    padding: 0px;
+article.card > h2 {
+    font-size: 1.3em;
 }
 article.card > button {
     background-color: var(--cor-button);
