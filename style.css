@@ -51,7 +51,7 @@ div#info > h1 {
     padding: 25px 0px 5px 10px;
 }
 div#reserva > h1 {
-    padding: 5px 0px 5px 10px;
+    padding: 20px 0px 5px 10px;
 }
 div#info > p {
     padding: 10px 50px 5px 50px;
@@ -117,14 +117,14 @@ article.card > h1 {
 article.cardC > h2 {
     padding: 0px 20px 0px 22px;
 }
-article.card > button {
+article.card > button, div#reserva > button {
     background-color: var(--cor-button);
     color: var(--cor-de-caixa);
     padding: 15px 25px;
     border-radius: 30px;
     margin: 10px 0px 20px 0px;
 }
-article.card > button:hover {
+article.card > button:hover, div#reserva > button:hover {
     transform: scale(1.05);
 }
 article.card > img {
@@ -172,5 +172,82 @@ section#redes > P > a {
     100% {
         /* Ajuste este valor multiplicando 322px pela quantidade de cards ORIGINAIS */
         transform: translateX(-966px); 
+    }
+}
+
+/* ==========================================
+   DISPOSITIVOS MÉDIOS (Tablets - a partir de 768px)
+   ========================================== */
+@media screen and (min-width: 708px) {
+    body {
+        background-color: var(--cor-de-caixa);
+    }
+    main {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        gap: 20px;
+    }
+    div#info, div#reserva {
+        width: 600px;
+        min-width: 340px;
+    }
+    div.container  {
+        max-width: 95%; /* Expande o carrossel na tela */
+    }
+    div.containerC{
+        max-width: 80%;
+        margin: auto;
+    }
+    h1#diferente {
+        margin-left: 100px;
+    }
+    header > img {
+        width: 600px; /* Logo maior no tablet */
+    }
+}
+
+/* ==========================================
+   DISPOSITIVOS GRANDES (Desktops - a partir de 1024px)
+   ========================================== */
+@media screen and (min-width: 1024px) {
+    header > img {
+        width: 600px;
+    }
+    main {
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        gap: 20px;
+    }
+    div.container, div.containerC {
+        max-width: 1000px;
+    }
+    h1#diferente {
+        margin-left: 15px;
+    }
+    article.card, article.cardC {
+        margin: 15px;
+    }
+}
+
+/* ==========================================
+   DISPOSITIVOS ULTRA GRANDES (Large Screens - a partir de 1440px)
+   ========================================== */
+@media screen and (min-width: 1440px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        max-width: 1200px;
+        margin: auto;
+        gap: 20px;
     }
 }

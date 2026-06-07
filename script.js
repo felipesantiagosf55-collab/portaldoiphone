@@ -32,3 +32,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+function reservar() {
+    const numeroWhatsapp = "5543999301558";
+    const reservar = document.getElementById('reservar')
+    const msg = "Olá! Gostaria de reservar um IPhone!"
+    const mensagemCodi = encodeURIComponent(msg);
+
+    const linkWhatsApp = `https://wa.me/${numeroWhatsapp}?text=${mensagemCodi}`;
+    window.open(linkWhatsApp, "_blank");
+}
